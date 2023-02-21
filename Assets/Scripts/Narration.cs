@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using ObserverPattern;
+using UnityEngine;
 
 public class Narration : MonoBehaviour, IObserver
 {

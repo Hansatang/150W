@@ -31,16 +31,18 @@ namespace Experience
             // }
         }
     
-        void OnCollisionEnter2D(Collision2D collision)
+        void OnCollisionEnter2D(Collision2D other)
         {
-            var player = collision.collider.GetComponent<PlayerController>();
-            if (player)
+            
+            if (other.gameObject.CompareTag("Player"))
             {
-                Debug.Log("Exp"+ player.playerExperience);
-                player.playerExperience += worth; 
-                Debug.Log("Exp"+ player.playerExperience);
+                Debug.Log("Touch Square");
+                Debug.Log("Exp"+ other.gameObject.GetComponent<PlayerController>());
+                other.gameObject.GetComponent<PlayerController>().AwardExperience(worth);
                 Destroy(gameObject);
+                
             }
+     
         }
     }
 }

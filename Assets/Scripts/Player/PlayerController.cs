@@ -9,13 +9,26 @@ namespace Player
     public class PlayerController : Subject
     {
         // Move player in 2D space
-        public HealthBar healthBar;
         public Vector2 movementDirection;
         public float movementSpeed = 3f;
+        
+        //PLayer health
+        public HealthBar healthBar;
         public int playerMaxHealth = 100;
-        public int playerCurrentHealth ;
+        public int playerCurrentHealth;
+        
+        //Player experience
         public int playerExperience;
-
+        
+        //Player Statistics
+        public float area = 1.0f;
+        public float power = 1.0f;
+        public float speed = 1.0f;
+        
+        //Player Weapons
+        public XXYYRR xxyyrr;
+        
+        //Player Components
         Rigidbody2D _playerBody;
         BoxCollider2D _playerCollider;
     
@@ -26,6 +39,8 @@ namespace Player
             _playerBody = GetComponent<Rigidbody2D>();
             _playerCollider = GetComponent<BoxCollider2D>();
             NotifyObservers("Survival");
+            XXYYRR weapon1 = Instantiate(xxyyrr, new Vector3(0, 0, 0), Quaternion.identity);
+            weapon1.UpdateValues(area,power,speed);
         }
 
         void Update()
@@ -35,18 +50,18 @@ namespace Player
 
         private void FixedUpdate()
         {
-            _playerBody.velocity = movementDirection * movementSpeed;
+            _playerBody.MovePosition(_playerBody.position + movementDirection * (movementSpeed * Time.fixedDeltaTime));
         }
         
         void OnCollisionEnter2D(Collision2D other)
         {
             Debug.Log("Pain");
-            var magnitude = 250;
+            var magnitude = 2500;
  
-            var force = transform.position - other.transform.position;
- 
+            var force = transform.position - other.collider.transform.position;
+            Debug.Log(force);
             force.Normalize();
-            _playerBody.velocity =-force * magnitude;
+            _playerBody.AddForce(force * magnitude);
             
         }
 

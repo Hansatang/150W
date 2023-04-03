@@ -27,10 +27,8 @@ public class PlayerWeapons : MonoBehaviour
 
     IEnumerator SinSpawner()
     {
-        Debug.Log("Happens before");
         Instantiate(bullet, new Vector3(transform.position.x, transform.position.y, 0), _playerInput.Rotation);
         yield return new WaitForSeconds(2);
-        Debug.Log("Happens after");
         StartCoroutine(nameof(SinSpawner));
     }
 }

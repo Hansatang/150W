@@ -1,14 +1,13 @@
 ﻿using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Weapons
 {
     public class SinBullet : MonoBehaviour, IWeapon
     {
         private Vector2 _movementDirection;
-        public float moveSpeed = 0.5f;
+        public float moveSpeed = 5.0f;
 
-        public float frequency = 1.0f; // Speed of sine movement
+        public float frequency = 0.1f; // Speed of sine movement
         public float magnitude = 0.5f; // Size of sine movement
         private Vector3 _axis;
 
@@ -17,7 +16,7 @@ namespace Weapons
         void Start()
         {
             _pos = transform.position;
-            Destroy(gameObject, 5.0f);
+            Destroy(gameObject, 10.0f);
             _axis = transform.right;
         }
 

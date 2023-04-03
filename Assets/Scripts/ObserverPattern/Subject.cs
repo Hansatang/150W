@@ -11,18 +11,15 @@ namespace ObserverPattern
         {
             _observers.Add(observer);
         }
-        
+
         public void RemoveObserver(IObserver observer)
         {
             _observers.Remove(observer);
         }
-        
+
         protected void NotifyObservers(string data)
         {
-            _observers.ForEach((_observers) =>
-            {
-                _observers.OnNotify(data);
-            });
+            _observers.ForEach((_observers) => { _observers.OnNotify(data); });
         }
     }
 }

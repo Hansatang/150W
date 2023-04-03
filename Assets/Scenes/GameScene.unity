@@ -660,9 +660,15 @@ GameObject:
   m_Component:
   - component: {fileID: 643982345}
   - component: {fileID: 643982344}
-  - component: {fileID: 643982349}
   - component: {fileID: 643982346}
   - component: {fileID: 643982350}
+  - component: {fileID: 643982349}
+  - component: {fileID: 643982352}
+  - component: {fileID: 643982351}
+  - component: {fileID: 643982356}
+  - component: {fileID: 643982355}
+  - component: {fileID: 643982354}
+  - component: {fileID: 643982353}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -770,16 +776,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ef383d5df4c0d746aa7cf9920b9acee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementDirection: {x: 0, y: 0}
-  movementSpeed: 2
-  healthBar: {fileID: 520400256}
-  playerMaxHealth: 100
-  playerCurrentHealth: 0
-  playerExperience: 0
-  area: 1
-  power: 1
-  speed: 1
-  xxyyrr: {fileID: 5074324100935123108, guid: d039522ff886cd14f80e0cc58dcddfa1, type: 3}
 --- !u!61 &643982350
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -806,6 +802,85 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &643982351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 643982342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5473244e0564d134c8388d9168a9fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &643982352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 643982342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ede642defdb6cc4a9e330f0d08c8c5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &643982353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 643982342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3969b283bd05a8043a00bf6fc662bc59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  circleBullet: {fileID: 5074324100935123108, guid: d039522ff886cd14f80e0cc58dcddfa1, type: 3}
+  bullet: {fileID: 4629348922387377617, guid: 1cfbdb88bc07f5e4cbf449864d220d62, type: 3}
+--- !u!114 &643982354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 643982342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67f4b9dbc7fd92c41a8125db5e18fdf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &643982355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 643982342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e069e7388cb0224f9d587f1da6192d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerExperience: 0
+  playerLevelUpExperience: 0
+--- !u!114 &643982356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 643982342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e17696dd6a3119d46bd5a6602f27a7d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBar: {fileID: 520400256}
+  playerMaxHealth: 100
+  playerCurrentHealth: 0
 --- !u!1 &724236302
 GameObject:
   m_ObjectHideFlags: 0

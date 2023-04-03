@@ -1,12 +1,13 @@
 using UnityEngine;
+using Weapons;
 
-public class XXYYRR : MonoBehaviour
+public class CircleBullet : MonoBehaviour, IWeapon
 {
     // Start is called before the first frame update
     private float _rotateSpeed = 2f;
     private float _radius = 2.0f;
     private float _power = 1.0f;
- 
+
     private GameObject _player;
     private float _angle;
 
@@ -14,16 +15,16 @@ public class XXYYRR : MonoBehaviour
     {
         _player = GameObject.FindGameObjectWithTag("Player");
     }
- 
+
     private void Update()
     {
         _angle += _rotateSpeed * Time.deltaTime;
- 
-        var offset = new Vector3(Mathf.Sin(_angle), Mathf.Cos(_angle),0) * _radius;
+
+        var offset = new Vector3(Mathf.Sin(_angle), Mathf.Cos(_angle), 0) * _radius;
         transform.position = _player.transform.position + offset;
     }
 
-    public void UpdateValues(float area, float power, float speed)
+    public void Upgrade(float area, float power, float speed)
     {
         _radius = area * 2.0f;
         _rotateSpeed = speed * 2.0f;

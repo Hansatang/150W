@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Narration : MonoBehaviour, IObserver
 {
-    [SerializeField] private Subject _playerSubject;
+    [SerializeField] private Subject playerSubject;
 
     public void OnNotify(string data)
     {
@@ -12,11 +12,11 @@ public class Narration : MonoBehaviour, IObserver
 
     private void OnEnable()
     {
-        _playerSubject.AddObserver(this);
+        playerSubject.AddObserver(this);
     }
 
     private void OnDisable()
     {
-        _playerSubject.RemoveObserver(this);
+        playerSubject.RemoveObserver(this);
     }
 }

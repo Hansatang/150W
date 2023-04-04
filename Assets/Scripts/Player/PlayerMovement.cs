@@ -4,7 +4,7 @@ public class PlayerMovement : MonoBehaviour
 {
     //Player Components
     private PlayerInput _playerInput;
-    Rigidbody2D _playerBody;
+    private Rigidbody2D _playerBody;
 
     // Move player in 2D space
     private Vector2 _movementDirection;

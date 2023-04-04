@@ -16,7 +16,7 @@ namespace Weapons
         void Start()
         {
             _pos = transform.position;
-            Destroy(gameObject, 10.0f);
+            Destroy(gameObject, 2.0f);
             _axis = transform.right;
         }
 

@@ -4,8 +4,8 @@ namespace Weapons
 {
     public class SinBullet : MonoBehaviour, IWeapon
     {
-        private Vector2 _movementDirection;
-        public float moveSpeed = 5.0f;
+        private float _power = 1.0f;
+        private float _moveSpeed = 5.0f;
 
         public float frequency = 0.1f; // Speed of sine movement
         public float magnitude = 0.5f; // Size of sine movement
@@ -22,12 +22,20 @@ namespace Weapons
 
         void Update()
         {
-            _pos += transform.up * (Time.deltaTime * moveSpeed);
+            _pos += transform.up * (Time.deltaTime * _moveSpeed);
             transform.position = _pos + _axis * (Mathf.Sin(Time.time * frequency) * magnitude);
         }
 
 
         public void Upgrade(float area, float power, float speed)
+        {
+            magnitude = area * 2.0f;
+            _moveSpeed = speed * 2.0f;
+            _power = power * 2.0f;
+        }
+
+
+        public void Stop()
         {
             throw new System.NotImplementedException();
         }

@@ -30,4 +30,9 @@ public class CircleBullet : MonoBehaviour, IWeapon
         _rotateSpeed = speed * 2.0f;
         _power = power * 2.0f;
     }
+
+    public void Stop()
+    {
+        Destroy(gameObject);
+    }
 }

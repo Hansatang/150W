@@ -21,7 +21,7 @@ public class PlayerWeapons : MonoBehaviour
 
     private void ArmWeapons()
     {
-        var instantiate = Instantiate(circleBullet, _playerBody.position, Quaternion.identity) as IWeapon;
+        var instantiate = Instantiate(circleBullet, _playerBody.position, Quaternion.identity) as IWeaponSystem;
         StartCoroutine(nameof(SinSpawner));
     }
 

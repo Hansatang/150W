@@ -35,4 +35,13 @@ public class CircleBullet : MonoBehaviour, IWeapon
     {
         Destroy(gameObject);
     }
+    
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Enemies"))
+        {
+            other.gameObject.GetComponent<Enemy>().TakeDamage(_power);
+            Destroy(gameObject);
+        }
+    }
 }

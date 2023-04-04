@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerAnimatorHandler : MonoBehaviour
@@ -10,7 +8,8 @@ public class PlayerAnimatorHandler : MonoBehaviour
     public float vf = 0.0f;
     private static readonly int Horizontal = Animator.StringToHash("Horizontal");
     private static readonly int Vertical = Animator.StringToHash("Vertical");
-    private static readonly int Speed = Animator.StringToHash("Speed");
+    private static readonly int HorizontalX = Animator.StringToHash("LastMoveX");
+    private static readonly int VerticalY = Animator.StringToHash("LastMoveY");
 
     // Start is called before the first frame update
     void Start()
@@ -22,19 +21,17 @@ public class PlayerAnimatorHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        hf = _playerInput.Horizontal > 0.01f ? _playerInput.Horizontal : _playerInput.Horizontal < -0.01f ? 1 : 0;
-        vf = _playerInput.Vertical > 0.01f ? _playerInput.Vertical : _playerInput.Vertical < -0.01f ? 1 : 0;
-        if (_playerInput.Horizontal < -0.01f)
+        hf = _playerInput.Horizontal;
+        vf = _playerInput.Vertical;
+
+
+        if (hf is >= 0.2f or <= -0.2f || vf is >= 0.2f or <= -0.2f)
         {
-            transform.localScale = new Vector3(-5, 5, 1);
-        }
-        else
-        {
-            transform.localScale = new Vector3(5, 5, 1);
+            anim.SetFloat(HorizontalX, hf);
+            anim.SetFloat(VerticalY, vf);
         }
 
         anim.SetFloat(Horizontal, hf);
-        anim.SetFloat(Vertical, _playerInput.Vertical);
-        anim.SetFloat(Speed, vf);
+        anim.SetFloat(Vertical, vf);
     }
 }

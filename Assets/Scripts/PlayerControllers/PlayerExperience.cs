@@ -11,15 +11,7 @@ public class PlayerExperience : MonoBehaviour
         playerExperience = 0;
         playerLevelUpExperience = 100;
     }
-
-    void Start()
-    {
-    }
-
-
-    void Update()
-    {
-    }
+    
 
     public void AwardExperience(int worth)
     {

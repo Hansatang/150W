@@ -11,14 +11,12 @@ public class BackgroundHandler : MonoBehaviour
     // Original background object dimensions
     private float _backgroundOriginalSizeX;
     private float _backgroundOriginalSizeY;
-    
+
     private float _cameraOffsetX;
     private float _cameraOffsetY;
 
     void Start()
     {
-
-
         // Original Background Sizes
         SpriteRenderer sr = space.GetComponent<SpriteRenderer>();
         var originalSize = sr.size;
